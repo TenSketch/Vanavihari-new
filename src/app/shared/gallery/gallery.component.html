@@ -1,0 +1,9 @@
+<div class="masonry-layout" id={{id}} selectedRoom="selectedRoom">
+
+    <lightgallery [settings]="settings">
+        <a *ngFor="let item of imageFilenames" className="gallery-item" [attr.href]="item">
+            <img className="img-responsive" src="{{ item }}" />
+        </a>
+    </lightgallery>
+    <!-- Loop through the image filenames array and generate HTML elements -->
+</div>

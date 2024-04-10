@@ -1,0 +1,230 @@
+/* You can add global styles to this file, and also import other style files */
+@use "./scss/base/" as *;
+@use "./scss/components/" as *;
+
+html {
+  font-size: 15px;
+
+  @media (min-width: 600px) {
+    font-size: 14px;
+  }
+}
+
+body {
+  // background-color: $clr-light;
+  font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
+
+  &.dark-theme {
+    background-color: $clr-dark;
+    color: $clr-light;
+  }
+}
+
+a {
+  // cursor: pointer;
+  color: $clr-primary-dark !important;
+  cursor: pointer;
+  text-decoration: underline !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $clr-secondary;
+}
+
+.container {
+  @media (max-width: 576px) {
+    padding-inline: 2rem;
+  }
+}
+.logo {
+  width: min(65%, 200px);
+}
+.fa-solid,
+.fa-regular {
+  font-size: 1.1rem !important;
+  // margin-right: 5px;
+}
+.dropdown-item {
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    background-color: hsl($hue-primary, $saturation-primary, 85%);
+  }
+}
+
+.icon {
+  width: 30px;
+  // display: block;
+}
+
+.breadcrumb-item {
+  // The separator between breadcrumbs (by default, a forward-slash: "/")
+  + .breadcrumb-item {
+    //   padding-left: var(--#{$prefix}breadcrumb-item-padding-x);
+    &::before {
+      // float: left; // Suppress inline spacings and underlining of the separator
+      // padding-right: var(--#{$prefix}breadcrumb-item-padding-x);
+      color: $clr-dark;
+      content: url(assets/images/icons/breadcrumbs-right-arrow.svg);
+    }
+  }
+
+  // &.active {
+  //   color: var(--#{$prefix}breadcrumb-item-active-color);
+  // }
+}
+
+.card {
+  // background: rgba(255, 255, 255, 0.4);
+  // box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15), inset 0px 1px 0px #ffffff;
+  // backdrop-filter: blur(8px);
+  // -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  // border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 1rem;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 2px solid $clr-secondary;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.page-banner {
+  background: rgba(0, 0, 0, 0.508) fixed center / cover;
+  background-blend-mode: overlay;
+  color: white;
+  min-height: 70vh;
+  h1 {
+    color: $clr-light;
+  }
+}
+
+.breadcrumb {
+  padding: 1rem 1.9rem;
+}
+
+.main-title {
+  padding: $pad-main-title;
+  line-height: 1;
+}
+
+.mat-mdc-form-field {
+  width: -webkit-fill-available;
+  width: -moz-available;
+}
+
+.custom-form-no-stretch {
+  // background-color: transparent !important;
+  @media (min-width: 600px) {
+    width: unset !important;
+  }
+}
+
+.font-weight-bold {
+  font-weight: 600 !important;
+}
+
+.accordion-button {
+  padding-block: 0.5em !important;
+  color: $clr-dark;
+  font-size: 0.9rem;
+}
+
+.info-heading {
+  font-weight: bold;
+}
+
+.icon-small {
+  width: 18px;
+}
+
+.banner {
+  // background: rgba(0, 0, 0, 0.5) url(assets/img/vihari-room.jpg) center / cover no-repeat fixed;
+  background-blend-mode: multiply;
+  min-height: 50vh;
+}
+
+// search
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+// label {
+//   display: block;
+//   font-weight: bold;
+// }
+
+input[type="date"],
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  /* Aspect ratio 16:9 */
+  height: 0;
+
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+.mat-checkbox-layout {
+  background-color: #4d9900;
+}
+.custom-dropdown .mat-mdc-form-field
+  .mat-mdc-text-field-wrapper.mdc-text-field--outlined
+  .mat-mdc-form-field-infix {
+  padding: 5px !important;
+}
+.custom-dropdown .mat-mdc-form-field .mat-mdc-form-field-infix {
+  min-height: 33px !important;
+}
+.mat-mdc-form-field .mat-mdc-icon-button.mat-mdc-button-base {
+  height: 0px;
+}
+.mat-mdc-form-field .mdc-text-field .mdc-floating-label {
+  top: 50% !important;
+}
+.mat-mdc-form-field .mat-mdc-icon-button {
+  padding: 0px !important;
+}
+.custom-dropdown .mat-mdc-option {
+  min-height: 31px!important;
+}
+.mat-mdc-form-field-hint-wrapper{
+  padding: 5px 0px!important;
+}
+.mat-mdc-form-field-hint-wrapper, .mat-mdc-form-field-error-wrapper{
+  padding: 0px!important;
+}
+.loader{
+z-index: 9999;
+position: absolute;
+left: 50%;
+top: 50%;
+width: 10%;
+transform: translate(-50%, -50%);
+}
